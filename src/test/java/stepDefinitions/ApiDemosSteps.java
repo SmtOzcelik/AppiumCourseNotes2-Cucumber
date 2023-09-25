@@ -3,18 +3,27 @@ package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import screens.androidScreen.ApiDemosScreen;
 
 public class ApiDemosSteps {
+    ApiDemosScreen apiDemos=new ApiDemosScreen();
+
     @Given("App yuklensin")
     public void appYuklensin() {
+        apiDemos.contineButon.click();
+        apiDemos.okButon.click();
+        apiDemos.uyariOkButon.click();
     }
 
     @And("kullanici ana ekranda")
     public void kullaniciAnaEkranda() {
+        apiDemos.apiDemosLogo.isDisplayed();
+
     }
 
     @And("kullanici API Demos butununa tikladi")
     public void kullaniciAPIDemosButununaTikladi() {
+
     }
 
     @Then("kullanici API Demos ekraninda")
